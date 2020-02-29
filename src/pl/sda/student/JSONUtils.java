@@ -28,10 +28,11 @@ public class JSONUtils {
 
            Student value[] =  mapper.readValue(file, Student[].class);
             for(int x = 0; x < value.length; x++){
-                System.out.println(value[x].getName());
-                System.out.println(value[x].getLastname());
-                System.out.println(value[x].getIndex());
-                System.out.println();
+                System.out.println("Student: " + x + ":");
+                System.out.println("Imię: " + value[x].getName());
+                System.out.println("Nazwisko: " +value[x].getLastname());
+                System.out.println("Indeks: " +value[x].getIndex());
+                System.out.println("----------------------------------");
             }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
