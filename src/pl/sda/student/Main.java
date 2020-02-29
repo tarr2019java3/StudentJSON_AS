@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Student student = new Student("Jan", "Kowalski", 10); //serializacja - przekształcenie obiektu
         Student student1 = new Student("Marian", "Banaś", 11);
         Student student2 = new Student("Zenek", "Martyniuk", 12);
@@ -41,6 +41,11 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        JSONUtils ju = new JSONUtils();
+
+        ju.writeList("ListaStudentow.json", studentList);
+        ju.readList("ListaStudentow.json");
 
 
     }
