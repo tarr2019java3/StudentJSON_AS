@@ -12,19 +12,19 @@ import java.util.List;
 
 public class JSONUtils {
 
-    public void writeList(String name, List list) {
+    public void writeList(String filename, List<Student> list) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            mapper.writeValue(new File(name), list);
+            mapper.writeValue(new File(filename), list);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void readList(String name) throws IOException {
+    public void readList(String filename) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            File file = new File(name);
+            File file = new File(filename);
 
             Student value[] = mapper.readValue(file, Student[].class);
             for (int x = 0; x < value.length; x++) {
