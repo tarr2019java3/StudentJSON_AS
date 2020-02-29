@@ -1,13 +1,10 @@
 package pl.sda.student;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 public class JSONUtils {
@@ -25,8 +22,7 @@ public class JSONUtils {
         ObjectMapper mapper = new ObjectMapper();
         try {
             File file = new File(filename);
-
-            Student value[] = mapper.readValue(file, Student[].class);
+            Student[] value = mapper.readValue(file, Student[].class);
             for (int x = 0; x < value.length; x++) {
                 System.out.println("Student: " + x + ":");
                 System.out.println("Imię: " + value[x].getName());
